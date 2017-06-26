@@ -1,9 +1,9 @@
 Ad Campaign Application - Project Overview 
 
 a) Developed Ad Campaign web application using Spring Boot, 
-    Webserver-  Tomcat Server (port:8080)- provided by Spring
-    Database - H2 Database provided by Spring
-    Used Postman for posting requests to the tomcat server
+    Webserver -  Tomcat Server (port:8080)- provided by Spring,
+    Database - H2 Database provided by Spring,
+    Used Postman for posting requests to the tomcat server,
     Used Spring Scheduler for deactivating the Ads based on their duration time given
   
 =================================================================================
