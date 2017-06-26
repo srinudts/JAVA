@@ -1,6 +1,4 @@
-# JAVA
-
-Project Overview - Ad Campaign Application 
+Ad Campaign Application - Project Overview 
 
 a) Developed Ad Campaign web application using Spring Boot 
     Webserver-  Tomcat Server (port:8080)- provided by Spring
