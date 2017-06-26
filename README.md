@@ -42,7 +42,7 @@ b) Steps to run the application
 			  }
 
 ================================================================================
-c) Testing
-      Unit Test Cases for AdController, AdService 
-      Integration Testing for whole Ad application
+c) Testing : 
+      Unit Test Cases for AdController, AdService and
+      Integration Testing for complete Ad Campaign application
 
