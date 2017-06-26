@@ -17,8 +17,6 @@ import org.junit.Test;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.util.ReflectionTestUtils;
 
-
-
 @WebAppConfiguration
 public class AdServiceImplTest {
 	
@@ -31,11 +29,11 @@ public class AdServiceImplTest {
 		ReflectionTestUtils.setField(adService, "adDao", mockAdDao = mock(AdDao.class));
 	}
 	
-
 	@Test
 	public void findAdByPartnerId() throws Exception {
 		List<Ad> ads = new ArrayList<>();
 		Ad ad = new Ad();
+		ad.setPartnerId("SRINI");
 		ad.setActvFlag(true);
 		ads.add(ad);
 		
@@ -44,5 +42,4 @@ public class AdServiceImplTest {
 		
 		assertEquals(adDto.getActvFlag(), true);
 	}
-
 }

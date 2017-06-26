@@ -24,24 +24,15 @@ public class AdSchedulerComponent {
 	@Scheduled(initialDelay = 5000, fixedDelay = 1000)
 	@Transactional
 	public void runAdScheduler() {
-		
 		List<Ad> activeAds = adDao.findActiveAds();
-		
-//		LOG.debug("Active count={}",activeAds.size());
-		
 		for (Ad ad : activeAds) {
 			long expTime = ad.getCreatedDate().getTime() + (ad.getDuration()*1000);
 			long currTime = (new Date()).getTime();
-			
 			LOG.debug("runAdScheduler. Current time is :: {} / {}", expTime, currTime);
 			if(expTime - currTime < 0) {
 				ad.setActvFlag(false);
 				adDao.save(ad);
 			}
 		}
-		
-		
-
 	}
-	
 }

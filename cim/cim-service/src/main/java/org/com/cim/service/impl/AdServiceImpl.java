@@ -58,9 +58,6 @@ public class AdServiceImpl implements AdService {
 				return convertToDto(ad);
 			}
 		}
-
-		throw new RuntimeException("No Active ad found.");
-
+		throw new RuntimeException("No Active Ad found.");
 	}
-
 }

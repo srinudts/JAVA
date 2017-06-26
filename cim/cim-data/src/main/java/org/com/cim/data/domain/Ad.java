@@ -1,5 +1,4 @@
 package org.com.cim.data.domain;
-// Generated Jun 20, 2017 2:27:32 PM by Hibernate Tools 4.3.1.Final
 
 import java.util.Date;
 
@@ -18,6 +17,8 @@ import org.hibernate.annotations.Type;
 @Table(name = "ad", schema = "public")
 public class Ad implements java.io.Serializable {
 
+	private static final long serialVersionUID = 9876543211L;
+	
 	private Long adId;
 	private String partnerId;
 	private Integer duration;

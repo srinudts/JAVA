@@ -1,7 +1,6 @@
 package org.com.cim.web.controller;
 
 import static org.mockito.Matchers.any;
-import static org.mockito.Matchers.anyObject;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -33,28 +32,22 @@ public class AdControllerTest {
 		mockMvc = MockMvcBuilders.standaloneSetup(mockAdController).build();
 		ReflectionTestUtils.setField(mockAdController, "adService", mockAdService = mock(AdService.class));
 	}
-	
 
 	@Test
 	public void testFindAdByPartnerId() throws Exception {
-		when(mockAdService.findAdByPartnerId(any(String.class))).thenReturn(new AdDto());
+		when(mockAdService.findAdByPartnerId(any(String.class))).thenReturn(createAdDto());
 		
 		MvcResult result = mockMvc.perform(get("/ad/ALLURI"))
 									.andExpect(status().isOk())
 									.andReturn();
-		
-		String content = result.getResponse().getContentAsString();
-		Assert.isTrue(content.contains("\"partnerId\":\"SRINI\""));
+		 Assert.hasText("\"partnerId\":\"srini\"", result.getResponse().getContentAsString());
+		 Assert.hasText("\"duration\":1000", result.getResponse().getContentAsString());
+		 Assert.hasText("\"actvFlag\":true", result.getResponse().getContentAsString());
 	}
 	
-	/**
-	 * Test of createNewLic method, of class LicController.
-	 * @throws java.lang.Exception
-	 */
 	@Test
 	public void testSaveAd() throws Exception {
-		
-		when(mockAdService.saveAd(any(AdDto.class))).thenReturn(anyObject());
+		when(mockAdService.saveAd(any(AdDto.class))).thenReturn(createAdDto());
 		
 		MvcResult result = mockMvc.perform(post("/ad")
 				.contentType(MediaType.APPLICATION_JSON)
@@ -62,8 +55,17 @@ public class AdControllerTest {
 				.andExpect(status().isCreated())
 				.andReturn();
 		
-		String content = result.getResponse().getContentAsString();
-		Assert.isTrue(content.contains("\"partnerId\":\"SRINI\""));
+		Assert.hasText("\"partnerId\":\"srini\"", result.getResponse().getContentAsString());
+		Assert.hasText("\"duration\":1000", result.getResponse().getContentAsString());
+		Assert.hasText("\"actvFlag\":true", result.getResponse().getContentAsString());
+	}
+	
+	private AdDto createAdDto(){
+		AdDto ad = new AdDto();
+		ad.setActvFlag(true);
+		ad.setPartnerId("srini");
+		ad.setDuration(1000);
+		return ad;
 	}
 
 }
