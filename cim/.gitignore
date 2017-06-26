@@ -1,0 +1,11 @@
+target/
+		*.jar
+		*.war
+		*.class
+		.svn/
+*.prefs
+*.classpath
+k12esc-common/.settings/
+k12esc-data/.settings/
+k12esc-service/.settings/
+k12esc-web/.settings/
