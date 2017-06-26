@@ -8,7 +8,7 @@ a) Developed Ad Campaign web application using Spring Boot
     Used Postman for posting requests to the tomcat server
     Used Spring Scheduler for deactivating the Ads based on their duration time given
   
-======================================================================================
+=============================================================================
 b) Steps to run the application
 
 	1)Run the CIMApplication.java in CIM-WEB module as Java Application
@@ -43,7 +43,7 @@ b) Steps to run the application
 				"requestId": null
 			  }
 
-===================================================================================
+===========================================================================
 c) Testing
       Unit Test Cases for AdController, AdService 
       Integration Testing for whole Ad application
