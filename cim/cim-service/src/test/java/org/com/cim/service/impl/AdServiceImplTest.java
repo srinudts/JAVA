@@ -40,6 +40,6 @@ public class AdServiceImplTest {
 		when(mockAdDao.findByPartnerId(any(String.class))).thenReturn(ads);
 		AdDto adDto = adService.findAdByPartnerId("SRINI");
 		
-		assertEquals(adDto.getActvFlag(), true);
+		assertEquals(true, adDto.getActvFlag());
 	}
 }
